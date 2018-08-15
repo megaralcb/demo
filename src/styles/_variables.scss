@@ -1,0 +1,50 @@
+//Mixins
+@mixin box-shadow() {
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 3px 3px -2px rgba(0, 0, 0, 0.12), 0 1px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin rotation() {
+  animation: rotation 2s infinite linear;
+  -webkit-animation: rotation 2s infinite linear;
+  @-webkit-keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(359deg);
+    }
+  }
+  @keyframes rotation {
+    from {
+      -webkit-transform: rotate(0deg);
+    }
+    to {
+      -webkit-transform: rotate(359deg);
+    }
+  }
+}
+
+@mixin transition($type) {
+  -webkit-transition: $type 0.2s ease;
+  transition: $type 0.2s ease;
+}
+
+//Fonts
+$defaultFont: "Roboto";
+$accentFont: "Lato";
+//Button
+$buttonCartAdd: lightblue;
+$buttonCartRemove: coral;
+//Cart
+$activeBorder: #999999;
+$discount: #5fb662;
+$valid: #5fb662;
+$fullCart: #a5d6a7;
+$emptyCart: #9fa8da;
+$primary: #9fa8da;
+$delete: #ef9a9a;
+$error: #ef9a9a;
+//Header
+$headerBackgroundColor: white;
+//Input
+$inputHighlightColor: #5264ae;

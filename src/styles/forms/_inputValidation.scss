@@ -1,0 +1,225 @@
+/* form starting stylings ------------------------------- */
+.validationGroup {
+  position: relative;
+  padding-bottom: 2em;
+}
+
+.quantityGroup {
+  position: relative;
+}
+
+.inputValidation {
+  font-size: 18px;
+  padding: 10px 10px 10px 5px;
+  display: block;
+  width: 100px;
+  border: none;
+  border-bottom: 1px solid #757575;
+  &.fullWidth {
+    width: 100%;
+  }
+  &.isMobile {
+    text-align: center;
+    width: 50px;
+  }
+  &.isValid {
+    color: $valid;
+    border-bottom: 1px solid $valid;
+  }
+}
+.inputValidation:focus {
+  outline: none;
+}
+
+/* LABEL ======================================= */
+label,
+.labelClass {
+  color: #999;
+  font-size: 18px;
+  font-weight: normal;
+  font-variant: small-caps;
+  position: absolute;
+  pointer-events: none;
+  left: 5px;
+  top: 10px;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+  &.isMobile {
+    left: 0;
+    font-size: 12px;
+  }
+  &.isValid {
+    color: $valid;
+  }
+}
+
+/* Hide HTML5 Up and Down arrows. */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+.inputValidation:focus ~ label,
+.inputValidation:not([value=""]) ~ label {
+  top: -20px;
+  font-size: 14px;
+  color: $inputHighlightColor;
+  &.isValid {
+    color: $valid;
+  }
+}
+.inputValidation ~ label {
+  &.isValid {
+    top: -20px !important;
+    font-size: 14px;
+  }
+}
+
+/* BOTTOM BARS ================================= */
+.validationBar {
+  position: relative;
+  display: block;
+  width: 100px;
+  &.fullWidth {
+    width: 100%;
+  }
+  &.isMobile {
+    width: 50px;
+  }
+  &.isValid {
+    display: none;
+  }
+}
+
+.vadlidationBar {
+  &.isValid:before,
+  &.isValid:after {
+    background: $valid !important;
+  }
+}
+
+.validationBar:before,
+.validationBar:after {
+  content: "";
+  height: 2px;
+  width: 0;
+  bottom: 1px;
+  position: absolute;
+  background: $inputHighlightColor;
+  transition: 0.2s ease all;
+  -moz-transition: 0.2s ease all;
+  -webkit-transition: 0.2s ease all;
+}
+.validationBar:before {
+  left: 50%;
+}
+.validationBar:after {
+  right: 50%;
+}
+
+/* active state */
+.inputValidation:focus ~ .validationBar:before,
+.inputValidation:focus ~ .validationBar:after {
+  width: 50%;
+}
+
+/* HIGHLIGHTER ================================== */
+.highlight {
+  position: absolute;
+  height: 60%;
+  width: 50px;
+  top: 25%;
+  left: 0;
+  pointer-events: none;
+  opacity: 0.5;
+  &.fullWidth {
+    width: 50%;
+  }
+  &.isMobile {
+    width: 25px;
+  }
+  &.isValid {
+    height: 0;
+  }
+}
+
+/* active state */
+.inputValidation:focus ~ .highlight {
+  -webkit-animation: inputHighlighter 0.3s ease;
+  -moz-animation: inputHighlighter 0.3s ease;
+  animation: inputHighlighter 0.3s ease;
+}
+
+/* ANIMATIONS ================ */
+//Standard
+@-webkit-keyframes inputHighlighter {
+  from {
+    background: $inputHighlightColor;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@-moz-keyframes inputHighlighter {
+  from {
+    background: $inputHighlightColor;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+@keyframes inputHighlighter {
+  from {
+    background: $inputHighlightColor;
+  }
+  to {
+    width: 0;
+    background: transparent;
+  }
+}
+
+//Valid
+@-webkit-keyframes validIinputHighlighter {
+  from {
+    background: $valid;
+  }
+  to {
+    width: 0;
+  }
+}
+@-moz-keyframes validIinputHighlighter {
+  from {
+    background: $valid;
+  }
+  to {
+    width: 0;
+  }
+}
+@keyframes validIinputHighlighter {
+  from {
+    background: $valid;
+  }
+  to {
+    width: 0;
+  }
+}
+
+//Errors
+.validationErrorWrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+  color: darken($error, 10);
+  font-variant: small-caps;
+  span {
+    padding-bottom: 0.5em;
+  }
+}

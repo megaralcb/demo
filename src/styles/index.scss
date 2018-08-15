@@ -1,0 +1,43 @@
+@import "variables";
+//App
+@import "app/footer";
+@import "app/header";
+@import "app/navLinks";
+@import "app/routes";
+//Components
+@import "cart";
+//Pages
+@import "pages/signin";
+//Store
+@import "store/filterBar";
+@import "store/store";
+//Checkout
+@import "checkout/checkout";
+//Forms
+@import "forms/input";
+@import "forms/inputForm";
+@import "forms/inputValidation";
+//Defaults
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+/* Change Autocomplete styles in Chrome*/
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  box-shadow: 0 0 0 30px white inset;
+  -webkit-box-shadow: 0 0 0 30px white inset;
+}

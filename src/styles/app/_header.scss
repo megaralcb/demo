@@ -1,0 +1,43 @@
+//Header Container
+.pageWrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.headerTitle {
+    padding-top: 1em;
+    font-variant: small-caps;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 2em;
+    width: 100%;
+}
+
+// .brandGroup {
+//   display: flex;
+//   margin-left: 2.5em;
+//   font-variant: small-caps;
+//   user-select: none;
+//   &.isMobile {
+//     margin-left: 1em;
+//     display: none;
+//   }
+//   &.isActive {
+//     display: block;
+//   }
+// }
+.mobileHeaderButton {
+    padding: 0.5em 0em;
+    margin: 1em 0em 1em 2em;
+    cursor: pointer;
+    display: none;
+    &.isMobile {
+        display: flex;
+    }
+}
+
+.mobileRoute {
+    font-variant: small-caps;
+}

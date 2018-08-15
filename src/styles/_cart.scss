@@ -1,0 +1,126 @@
+.material-icons {
+  @include transition(color);
+  &.cartIcon {
+    font-size: 20px;
+  }
+  &.emptyCart {
+    color: black;
+    &.isActive,
+    &.isActive:hover {
+      color: darken($emptyCart, 20);
+    }
+  }
+  &.fullCart {
+    color: darken($fullCart, 20);
+  }
+  &.isActive:hover {
+    color: darken($fullCart, 20);
+  }
+}
+
+.openCartContainer {
+  height: 100%;
+  width: 100%;
+}
+
+.closeCart {
+  display: none;
+  &.isMobile.isActive {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+  }
+}
+
+.cartContainer {
+  position: absolute;
+  right: 0;
+  display: flex;
+  background-color: white;
+
+  //Transition props
+  width: 0px;
+  @include transition(width);
+  @include box-shadow();
+  &.isActive {
+    width: 50%;
+  }
+  &.isMobile.isActive {
+    width: 75%;
+  }
+}
+
+//Cart Items
+//Scrolling Wrapper Start
+
+.cartItemsContainer {
+  position: fixed;
+  width: inherit;
+  height: 100%;
+  background-color: white;
+  z-index: 2;
+  @include box-shadow();
+  &.isMobile {
+    overflow-y: scroll;
+  }
+}
+.cartItemsWrapper {
+  position: absolute;
+  height: 60%;
+  width: 100%;
+  overflow-y: scroll;
+  right: -32px;
+  margin-bottom: 4em;
+  &.isMobile {
+    right: unset;
+  }
+}
+//Scrolling Wrapper End
+
+.cartTitle {
+  display: none;
+  &.isActive {
+    font-variant: small-caps;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 1em 0;
+    padding: 1em 0 2em 0;
+    border-bottom: 1px solid $activeBorder;
+  }
+}
+
+.cartItem {
+  display: flex;
+  margin: 1em;
+}
+
+.cartImage {
+  height: 25% !important;
+  width: 25% !important;
+}
+
+.removeItemButton {
+  display: none;
+  margin-right: 2em;
+  &.isActive {
+    display: inline-flex;
+    justify-content: flex-end;
+    width: 100%;
+  }
+}
+
+.checkoutButtonWrapper {
+  display: none;
+  &.isActive {
+    display: inline-flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: inherit;
+    height: 50px;
+    justify-content: center;
+  }
+}

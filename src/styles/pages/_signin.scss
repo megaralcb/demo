@@ -1,0 +1,15 @@
+.forgotPassword {
+  display: flex;
+  padding: 2em;
+  margin-bottom: 1em;
+  font-variant: small-caps;
+  justify-content: center;
+  cursor: pointer;
+  @include transition(background-color);
+  &:hover {
+    background-color: $primary;
+  }
+  &.isMobile {
+    //
+  }
+}

@@ -1,0 +1,114 @@
+.checkoutNoItems {
+  justify-content: center;
+  text-align: center;
+  line-height: 1.5;
+}
+
+.checkoutStoreLink {
+  color: $emptyCart;
+  font-weight: bolder;
+  cursor: pointer;
+  @include transition(color);
+  &:hover {
+    color: darken($emptyCart, 10);
+  }
+}
+
+.checkoutSummaryImage {
+  height: 100px;
+}
+
+.itemRowWrapper {
+  display: flex;
+  width: 100%;
+  justify-content: space-around;
+  padding: 1em;
+}
+.itemRowLockup {
+  display: flex;
+  flex-direction: column;
+  padding: 1em;
+}
+
+//Items
+.discountWrapper {
+  &.isCentered {
+    padding: 1em;
+    justify-content: center;
+    display: flex;
+  }
+}
+
+.discountTotal {
+  // padding: 1em;
+  align-items: flex-end;
+  display: flex;
+  position: relative;
+}
+
+.discountLockup {
+  height: 100%;
+  overflow: hidden;
+  align-items: flex-end;
+  display: flex;
+  padding-bottom: 1em;
+  @include transition(height);
+  &.isInactive {
+    height: 0;
+  }
+}
+
+.deleteIcon {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  align-items: center;
+  display: flex;
+  @include transition(height);
+  &.isInactive {
+    height: 0;
+  }
+}
+
+//Data Specific
+.quantityInput {
+  width: 50%;
+  .isMobile {
+    width: 25%;
+  }
+}
+
+.priceDiscounts {
+  text-decoration: line-through;
+  color: #ccc;
+}
+
+.discountedPrice {
+  font-weight: bolder;
+  color: $discount;
+}
+
+//SubTotal fixed footer
+.subTotal {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+.footerBlocker {
+  content: "";
+  height: 60px;
+}
+
+// .subTotal {
+//   position: fixed;
+//   bottom: 0;
+//   cursor: pointer;
+//   width: 100%;
+//   font-weight: bold;
+//   font-variant: small-caps;
+//   display: flex;
+//   justify-content: space-around;
+//   padding: 2em 0;
+//   background-color: $fullCart;
+// }

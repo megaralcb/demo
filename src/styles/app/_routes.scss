@@ -1,0 +1,9 @@
+.routeContainer {
+  display: flex;
+  &.isMobile {
+    justify-content: center;
+  }
+}
+.routeWrapper {
+  width: 100%;
+}

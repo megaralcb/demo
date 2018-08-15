@@ -1,0 +1,182 @@
+/* form starting stylings ------------------------------- */
+
+.group {
+    position: relative;
+    padding-bottom: 2em;
+}
+
+.quantityGroup {
+    position: relative;
+}
+
+.inputClass {
+    font-size: 18px;
+    padding: 10px 10px 10px 5px;
+    display: block;
+    width: 100px;
+    border: none;
+    border-bottom: 1px solid #757575;
+    &.fullWidth {
+        width: 100%;
+    }
+    &.isMobile {
+        text-align: center;
+        width: 50px;
+    }
+}
+
+.inputClass:focus {
+    outline: none;
+}
+
+
+/* LABEL ======================================= */
+
+label,
+.labelClass {
+    color: #999;
+    font-size: 18px;
+    font-weight: normal;
+    font-variant: small-caps;
+    position: absolute;
+    pointer-events: none;
+    left: 5px;
+    top: 10px;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+    &.isMobile {
+        left: 0;
+        font-size: 12px;
+    }
+}
+
+
+/* Hide HTML5 Up and Down arrows. */
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.inputClass:focus~label {
+    top: -20px;
+    font-size: 14px;
+    color: $inputHighlightColor;
+}
+
+.inputClass:valid~label,
+.inputClass:not(:empty)~label {
+    top: -20px !important;
+    font-size: 14px;
+}
+
+
+/* BOTTOM BARS ================================= */
+
+.bar {
+    position: relative;
+    display: block;
+    width: 100px;
+    &.fullWidth {
+        width: 100%;
+    }
+    &.isMobile {
+        width: 50px;
+    }
+}
+
+.bar:before,
+.bar:after {
+    content: "";
+    height: 2px;
+    width: 0;
+    bottom: 1px;
+    position: absolute;
+    background: $inputHighlightColor;
+    transition: 0.2s ease all;
+    -moz-transition: 0.2s ease all;
+    -webkit-transition: 0.2s ease all;
+}
+
+.bar:before {
+    left: 50%;
+}
+
+.bar:after {
+    right: 50%;
+}
+
+
+/* active state */
+
+.inputClass:focus~.bar:before,
+.inputClass:focus~.bar:after {
+    width: 50%;
+}
+
+
+/* HIGHLIGHTER ================================== */
+
+.highlight {
+    position: absolute;
+    height: 60%;
+    width: 50px;
+    top: 25%;
+    left: 0;
+    pointer-events: none;
+    opacity: 0.5;
+    &.fullWidth {
+        width: 50%;
+    }
+    &.isMobile {
+        width: 25px;
+    }
+}
+
+
+/* active state */
+
+.inputClass:focus~.highlight {
+    -webkit-animation: inputHighlighter 0.3s ease;
+    -moz-animation: inputHighlighter 0.3s ease;
+    animation: inputHighlighter 0.3s ease;
+}
+
+
+/* ANIMATIONS ================ */
+
+@-webkit-keyframes inputHighlighter {
+    from {
+        background: $inputHighlightColor;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@-moz-keyframes inputHighlighter {
+    from {
+        background: $inputHighlightColor;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+@keyframes inputHighlighter {
+    from {
+        background: $inputHighlightColor;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}

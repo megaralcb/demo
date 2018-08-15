@@ -1,0 +1,76 @@
+.cartWrapper {
+  //Spacing
+  // padding: 1em;
+  //Position
+  position: relative;
+  //Colors
+  background-color: transparent;
+  //Animations
+  @include transition(background-color);
+  cursor: pointer;
+  &.isMobile {
+    height: 100%;
+  }
+}
+
+.itemWrapper {
+  //Size
+  //Position
+  position: relative;
+  opacity: 0.25;
+  //Orientation
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: left;
+  //Spacing
+  margin: 1em;
+  @include transition(opacity);
+  &.isActive {
+    opacity: 1;
+    order: -1;
+  }
+}
+
+.imageComponentContainer {
+  //Size
+  height: 100px;
+  //Position
+  //Orientation
+  //Spacing
+}
+
+.image {
+  //Size
+  height: 100px;
+  //Position
+  //Orientation
+  //Spacing
+}
+
+.imagesContainer {
+  margin: 1em 0;
+  width: 100%;
+  justify-content: center;
+  display: inline-flex;
+  flex-wrap: wrap;
+  &.isDesktop {
+    justify-content: space-around;
+  }
+}
+
+.itemsContainer {
+  //Size
+  height: 0;
+  //Spacing
+  padding: 1em;
+  margin: 1em 0;
+  //Position
+  position: absolute;
+  right: 0;
+  //Animations
+  @include transition(height);
+}
+
+.itemList {
+  list-style: none;
+}

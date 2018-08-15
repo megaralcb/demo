@@ -1,0 +1,72 @@
+.filterBarContainer {
+  //
+}
+
+//FilterBar Title and Icon
+.filterBarTitle {
+  padding: 0.5em 0em;
+  margin: 1em 2em;
+  cursor: pointer;
+  align-content: center;
+  font-variant: small-caps;
+  user-select: none;
+
+  @include transition(color);
+  &.activeFilter {
+    font-weight: 600;
+    color: $emptyCart;
+  }
+  &.isExpanded {
+    font-weight: 600;
+    color: $emptyCart;
+  }
+  &.isMobile {
+    //
+  }
+}
+
+.filterIcon {
+  font-variant: normal;
+  float: left;
+  margin-right: 1em;
+  &.filterBarExpanded {
+    color: $emptyCart;
+  }
+}
+
+//Filter Bar Toggles for Mobile
+.filterBar {
+  //Position
+  display: inline-flex;
+  justify-content: center;
+  //Display
+  //Other
+  user-select: none;
+  font-variant: small-caps;
+  //Other
+  //Animations
+  &.active {
+    display: flex;
+    &.isMobile {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+  &.isExpanded {
+    flex-wrap: wrap;
+  }
+  .filter {
+    //Spacing
+    padding: 0.5em 0em;
+    margin: 1em 2em;
+    //Other
+    cursor: pointer;
+    display: none;
+    &.active {
+      border-bottom: solid 1px $activeBorder;
+    }
+    &.isExpanded {
+      display: inline-flex;
+    }
+  }
+}

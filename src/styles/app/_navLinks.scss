@@ -1,0 +1,100 @@
+.headerWrapper {
+  display: inline-flex;
+  &.isMobile {
+    flex-direction: column;
+  }
+}
+
+.headerBlocker {
+  content: " ";
+  height: 71px;
+}
+
+.headerContainer {
+  //Size
+  width: 100%;
+  height: 71px;
+  //Position
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  //Orientation
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  //Color
+  background-color: $headerBackgroundColor;
+  //Other
+  box-shadow: none;
+  //Animations
+  @include transition(box-shadow);
+  //Mods
+  &.hasScrolled {
+    //Other
+    @include box-shadow;
+  }
+  &.filterBarIsActive {
+    @include box-shadow;
+  }
+  &.isMobile {
+    justify-content: space-between;
+  }
+}
+
+.brandGroup {
+  display: flex;
+  margin-left: 2.5em;
+  font-variant: small-caps;
+  user-select: none;
+  &.isMobile {
+    position: absolute;
+    margin-left: 0;
+    left: 0;
+    top: 72px;
+    width: 0;
+    overflow: hidden !important;
+    flex-direction: column;
+    background-color: white;
+    -webkit-transition: width 0.2s ease, padding 0.2s ease;
+    transition: width 0.2s ease-in-out, padding 0.2s ease;
+    @include box-shadow();
+  }
+  &.isActive {
+    padding: 1em;
+    width: 100%;
+  }
+}
+
+.mobileHeaderItem {
+  margin: 0 1em;
+  cursor: pointer;
+  &.isMobile {
+    opacity: 0.5;
+    padding: 1em;
+    @include transition(opacity);
+  }
+  &.isActive {
+    opacity: 1;
+  }
+}
+
+//Cart Button
+.headerCart {
+  margin-right: 2em;
+}
+
+.cartWrapper {
+  border-radius: 50%;
+}
+
+//Mobile Header
+.mobileScreen {
+  height: 800px;
+  width: 100%;
+  position: absolute;
+  display: none;
+  z-index: 3;
+  &.isActive {
+    display: block;
+  }
+}

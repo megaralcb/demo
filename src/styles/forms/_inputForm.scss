@@ -1,0 +1,19 @@
+.formWrapper {
+  padding: 0 2em 2em 2em;
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  &.isMobile {
+  }
+}
+
+.inputForm {
+  padding: 2em 0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+
+.spin {
+  @include rotation();
+}
